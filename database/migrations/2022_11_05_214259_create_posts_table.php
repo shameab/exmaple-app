@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->bigInteger('user_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('title');
             $table->string('body');
+            $table->
             $table->string('tags')->nullable();
             $table->timestamps();
         });
