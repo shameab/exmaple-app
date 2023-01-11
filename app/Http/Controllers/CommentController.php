@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 
-class LoginController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +16,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -33,9 +35,23 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $post)
     {
-        //
+        $request->validate([
+            'comment' => 'required | max:255',
+        ]); 
+
+        $body = $request->input('comment');
+
+        $comment = new Comment();
+        $comment -> post_id = $post;
+        $comment -> user_id = Auth::id();
+        $comment -> comment = $body;
+
+        $comment->save();
+
+
+        return redirect('/blog');
     }
 
     /**
@@ -44,9 +60,12 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post_id)
+
     {
-        //
+        $comment = Comment::where('post_id', $post_id) -> first();
+        return view('single-post', compact('comment'));
+        
     }
 
     /**

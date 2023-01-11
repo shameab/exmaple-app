@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rana's Recipes</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="createpost.css">
+  <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+</head>
+<body>
+
+
+<style>
+  body {
+    background-image: url('recipesback2.jpeg');
+  }
+</style>
+
+<div class="topnavbar">
+    <a href="/">Home</a>
+    <a href="blog">Recipes</a>
+    <a href="contact">Contact</a>
+    <a href="about">About</a>
+    <a href="login" class="split">Login</a>
+    <a href="register" class="split">Register</a>
+  </div>
+
+  <div class="header">
+    <h1>New Post</h1>
+  </div>
+
+<div class="card">
+<div class="post-form">
+    <form action="{{route('post.store')}}" method ="POST" enctype="multipart/form-data">
+        @csrf
+            <label class="title"><span>Title</span></label>
+            <input type="text" id="title" name="title" value="{{ old('title') }}" />
+            @error('title')
+                <p style="color: red">{{$message}}</p>
+            @enderror
+            <label for="image"><span>Image</span></label>
+            <input type="file" id="image" name="image" />
+            @error('image')
+                <p style="color: red">{{$message}}</p>
+            @enderror
+            <label for="body"><span>Body</span></label>
+            <textarea id="body" name="body">{{ old('body') }}</textarea>
+            @error('body')
+                <p style="color: red">{{$message}}</p>
+            @enderror
+            <input type="submit" value="Submit" />
+</div>
+</div>
+
+
+  <script>
+    ClassicEditor
+                            .create( document.querySelector( '#body' ) )
+                            .then( editor => {
+                                    console.log( editor );
+                            } )
+                            .catch( error => {
+                                    console.error( error );
+                            } );
+</script>
+
+</body>

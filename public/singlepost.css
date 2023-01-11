@@ -1,0 +1,68 @@
+.header {
+    padding: 20px;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(6, 6, 6);
+    text-align: center;
+  }
+  
+  body {
+      font-family: serif;
+      padding: 20px;
+      background: rgb(255, 254, 254);
+    }
+  
+    .topnavbar {
+      overflow: hidden;
+    }
+    
+    /* Style the links inside the navigation bar */
+    .topnavbar a {
+      float: left;
+      color: rgb(251, 248, 248);
+      text-align: center;
+      padding: 20px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    /* Change the color of links on hover */
+    .topnavbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+  
+  
+    .topnavbar a.split {
+      float: right;
+      color: rgb(255, 255, 255);
+    }
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    .card {
+        width:50%;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        margin-left: 25%;
+        margin-top: 20px;
+        border-color: black;
+      }
+
+.title {
+    font-size: 20px;
+}
+
+.single-blog-post img {
+    height: 50vh;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .time-and-author span.split {
+    float: right;
+    color: rgb(4, 4, 4);
+  }

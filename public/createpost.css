@@ -1,4 +1,4 @@
-header {
+.header {
     padding: 30px;
     font-size: 20px;
     color: white;
@@ -8,7 +8,7 @@ header {
   body {
       font-family: serif;
       padding: 20px;
-      background: black;
+      background: rgb(8, 8, 8);
     }
   
     .topnavbar {
@@ -37,3 +37,20 @@ header {
       float: right;
       color: white;
     }
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    .card {
+        width:50%;
+        background-color: white;
+        padding: 20px;
+        margin-left: 25%;
+        margin-top: 20px;
+      }
+
+.title {
+    font-size: 20px;
+}
+

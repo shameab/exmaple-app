@@ -10,23 +10,29 @@
 
 <style>
   body {
-    background-image: url('foodback2.jpeg');
-    background-repeat: no-repeat;
+    background-image: url('foodback1.jpeg');
   }
 </style>
+
+<div class="topnavbar">
+  <a href="/">Home</a>
+  <a href="blog">Recipes</a>
+  <a href="contact">Contact</a>
+  <a href="about">About</a>
+  <a href="login" class="split">Login</a>
+  <a href="register" class="split">Register</a>
+</div>
 
 <div class="header">
   <h1>Rana's Recipes</h1>
 </div>
 
-<div class="topnavbar">
-  <a class="active" href="home">Home</a>
-  <a href="blog">Recipes</a>
-  <a href="contact">Contact</a>
-  <a href="about">About</a>
-  <a href="login">Login</a>
-  <a href="register">Register</a>
+<div class="text">
+<p>
+   Come inside and have a look around
+</p>
 </div>
+
 
 
 

@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-  background-image: url('foodback.png');
-}
-</style>
+  <title>Rana's Recipes</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="posts.css">
 </head>
 <body>
 
-<h2>Background Image</h2>
 
-<p>By default, the background image will repeat itself if it is smaller than the element where it is specified, in this case the body element.</p>
+<style>
+  body {
+    background-image: url('recipesback3.jpeg');
+  }
+</style>
 
-</body>
-</html>
+<div class="topnavbar">
+    <a href="/">Home</a>
+    <a href="blog">Recipes</a>
+    <a href="contact">Contact</a>
+    <a href="about">About</a>
+    <a href="login" class="split">Login</a>
+    <a href="register" class="split">Register</a>
+  </div>
+
+
+<div class="header">
+  <h1>Contact Us</h1>
+</div>
 

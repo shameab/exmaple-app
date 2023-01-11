@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->bigInteger('user_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
+            $table->string('imagePath');
             $table->string('body');
-            $table->
             $table->string('tags')->nullable();
             $table->timestamps();
         });

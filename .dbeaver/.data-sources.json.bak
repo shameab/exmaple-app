@@ -10,7 +10,24 @@
 			"configuration": {
 				"host": "localhost",
 				"port": "3306",
-				"url": "jdbc:mysql://localhost:3306/",
+				"database": "exmaple_app",
+				"url": "jdbc:mysql://localhost:3306/exmaple_app",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-1844cf1f3fe-58662a8b8da63d6e": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "exmaple_app",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "exmaple_app",
+				"url": "jdbc:mysql://localhost:3306/exmaple_app",
 				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}
