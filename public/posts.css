@@ -11,3 +11,88 @@ body {
     background: black;
   }
 
+  .topnavbar {
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnavbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnavbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+
+
+  .topnavbar a.split {
+    float: right;
+    color: white;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  
+  .column {
+    float: right;
+    width: 33.33%;
+    padding: 10px;
+  }
+
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    height: 500px;
+  }
+
+  .card h1 {
+    width: 30%;
+    height: 250px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn { 
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .card a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Style the search box inside the navigation bar */
+  .card img {
+    height: 39vh;
+    object-fit: cover;
+    width: 380px;
+  }
+
+  
