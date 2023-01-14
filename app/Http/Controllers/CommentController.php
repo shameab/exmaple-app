@@ -39,14 +39,14 @@ class CommentController extends Controller
     {
         $request->validate([
             'comment' => 'required | max:255',
-        ]); 
+        ]);
 
         $body = $request->input('comment');
 
         $comment = new Comment();
-        $comment -> post_id = $post;
-        $comment -> user_id = Auth::id();
-        $comment -> comment = $body;
+        $comment->post_id = $post;
+        $comment->user_id = Auth::id();
+        $comment->comment = $body;
 
         $comment->save();
 
@@ -63,9 +63,8 @@ class CommentController extends Controller
     public function show($post_id)
 
     {
-        $comment = Comment::where('post_id', $post_id) -> first();
+        $comment = Comment::where('post_id', $post_id)->first();
         return view('single-post', compact('comment'));
-        
     }
 
     /**

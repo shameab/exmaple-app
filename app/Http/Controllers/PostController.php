@@ -14,17 +14,44 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'show');
+    }
+
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(6);
         return view('post', compact('posts'));
     }
 
-    public function show($title) {
-        $post = Post::where('title', $title) -> first();
-        return view('single-post', compact('post'));
+    public function showmine()
+    {
+        $user = Auth::user();
+        $posts = Post::where('user_id', $user->id)->get();
+    
+
+        return view('my-posts', compact('user', 'posts'));
+
     }
 
+    public function showall(Post $post)
+    {
+        $user = $post->user_id;
+        $posts = Post::where('user_id', $user)->get();
+    
+
+        return view('user-posts', compact('user', 'posts'));
+
+    }
+
+
+    public function show(Post $post)
+    {
+        return view('single-post', compact('post'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +60,6 @@ class PostController extends Controller
     public function create()
     {
         return view('create-new-post');
-        
     }
 
     /**
@@ -45,10 +71,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required | max:255',
+            'title' => 'required | max:30',
             'image' => 'required | image',
             'body' => 'required'
-        ]); 
+        ]);
         $title = $request->input('title');
         $user_id = Auth::user()->id;
         $body = $request->input('body');
@@ -64,19 +90,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect('/blog');
-        
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
- /*   public function show($id)
-    {
-        // 
-    } */
 
     /**
      * Show the form for editing the specified resource.
@@ -84,9 +98,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('edit-single-post', compact('post'));
     }
 
     /**
@@ -96,9 +110,27 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'title' => 'required | max:30',
+            'image' => 'required | image',
+            'body' => 'required'
+        ]);
+
+        $postId = $post->id;
+        $title = $request->input('title');
+        $body = $request->input('body');
+
+        $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
+
+        $post->title = $title;
+        $post->body = $body;
+        $post->imagePath = $imagePath;
+
+        $post->save();
+
+        return redirect('/blog');
     }
 
     /**
@@ -107,28 +139,24 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect('/blog')->with('success', 'Post successfully deleted');
     }
 
-    public function saveComment(Request $request, $id) {
+    public function saveComment(Request $request, $id)
+    {
 
         $user_id = Auth::user()->id;
 
         $body = $request->input('comment');
-        
+
         $comment = new Comment();
-        $comment -> user_id =$user_id;
-        $comment -> post_id = $id;
-        $comment-> comment = $comment;
+        $comment->user_id = $user_id;
+        $comment->post_id = $id;
+        $comment->comment = $comment;
 
         $comment->save();
-        
-
-        
-
     }
 }
-
-

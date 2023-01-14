@@ -1,0 +1,199 @@
+.header {
+    padding: 20px;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(6, 6, 6);
+    text-align: center;
+}
+
+.header2 {
+    padding: 20px;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.welcomeheader {
+    padding: 150px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+body {
+    font-family: serif;
+    padding: 20px;
+    background: rgb(255, 254, 254);
+}
+
+.topnavbar {
+    overflow: hidden;
+}
+
+
+.topnavbar a {
+    float: left;
+    color: rgb(251, 248, 248);
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnavbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+.topnavbar a.split {
+    float: right;
+    color: rgb(255, 255, 255);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-color: black;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.single-blog-post img {
+    height: 50vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.single-blog-post p.split {
+    float: right;
+}
+
+.comment-form {
+    width: 50%;
+    background-color: rgb(254, 253, 253);
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+}
+
+.comment-form input {
+    margin-top: 20px;
+
+}
+
+.commentscard {
+    box-sizing: border-box;
+    border: 1px solid rgb(2, 2, 2);
+    margin-bottom: 20px auto;
+    width: 100%;
+    height: 200px;
+    overflow: scroll;
+    background-color: rgb(249, 250, 251);
+
+}
+
+.commentbubble {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    /*   border: 1px solid rgb(7, 7, 7); */
+    background-color: rgb(55, 113, 154);
+
+}
+
+.aboutcard {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-color: black;
+}
+
+.aboutcard p {
+    text-align: center;
+}
+
+.contactcard {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-color: black;
+}
+
+.postbuttons a {
+    padding: 20px auto;
+
+}
+
+.postbuttons input {
+    padding: 20px auto;
+
+}
+
+.column {
+    float: right;
+    width: 33.33%;
+    padding: 10px;
+}
+
+.postscard {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    height: 500px;
+}
+
+.postscard h1 {
+    width: 30%;
+    height: 250px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 800px) {
+
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.postscard a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.postscard img {
+    height: 39vh;
+    object-fit: cover;
+    width: 380px;
+}
